@@ -38,6 +38,6 @@
  -Когут Іван      КМ-32 <br/>
  -Махнюк Даша     КМ-31 <br/>
 ## UML-Diagram
-![alt tag](file:///C:/Users/%D0%92%D0%B0%D1%81%D1%8F/Downloads/_2.jpg)
+![alt tag](https://pp.vk.me/c624826/v624826612/29554/-NvSXRAfTwc.jpg)
 
   
