@@ -1,0 +1,15 @@
+from IllegalCharacters import IllegalCharacters
+from FalseConfirmation import FalseConfirmation
+from BadLength import BadLength
+
+class CreateUsersClass(IllegalCharacters, FalseConfirmation, BadLength):
+	def __init__(self, login, password, mail, name, last_name, mob_telefon):
+		self.login = login
+		self.password = password
+		self.mail = mail
+		self.name = name
+		self.last_name = last_name
+		self.mob_telefon = mob_telefon
+
+	def __str__(self):
+		return '{0}, {1}, {2}, {3}, {4}, {5}'.format(self.login, self.password, self.mail, self.name, self.last_name, self.mob_telefon)
