@@ -1,0 +1,13 @@
+from NotFoundVacancy import NotFoundVacancy
+
+while True:
+	try:
+		vacancy_enter = raw_input("Vacancy: ")
+
+		if vacancy_enter in NotFoundVacancy.list_vacancies: print 'Found'
+		else: raise NotFoundVacancy
+
+		break
+
+	except NotFoundVacancy as instance:
+		print instance
