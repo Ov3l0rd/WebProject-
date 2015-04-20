@@ -1,0 +1,6 @@
+class NotFoundVacancy(Exception):
+
+	list_vacancies = ['vacancy#1', 'vacancy#2', 'vacancy#3', 'vacancy#4', 'vacancy#5', 'vacancy#6', 'vacancy#7']
+
+	def __str__(self):
+		return '\nNot found the vacancy!\n' + 'Try again.\n'
