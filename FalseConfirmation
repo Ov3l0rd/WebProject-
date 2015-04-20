@@ -1,0 +1,11 @@
+from ExceptionPassword import ExceptionPassword
+
+class FalseConfirmation(ExceptionPassword):
+
+	def __str__(self):
+		return '\nOops. Wrong password confirmation! Try again.\n'
+
+	def check_password(self, repeat_password):
+		if self.password == repeat_password:
+			return True
+		return False
