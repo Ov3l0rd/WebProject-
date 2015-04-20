@@ -1,0 +1,21 @@
+from NotFoundUser import NotFoundUser
+
+while True:
+	try:
+		login = raw_input('Login: ')
+		password = raw_input('Password: ')
+		with open('../basedata.txt') as file_users:
+			for line in file_users:
+				print line
+				list_log_pass = line.split()[:2] 
+				if list_log_pass[0] == login and list_log_pass[1] == password:
+					print '\nCorrect login and password.'
+					break
+			else:
+				raise NotFoundUser(login, password)
+		break
+	except NotFoundUser as user:
+		print user
+
+		
+
