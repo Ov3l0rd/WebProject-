@@ -1,0 +1,50 @@
+from CreateUsersClass import CreateUsersClass
+from BadLength import BadLength
+from FalseConfirmation import FalseConfirmation
+from IllegalCharacters import IllegalCharacters
+from ExceptionLogin import ExceptionLogin
+from ExceptionPassword import ExceptionPassword
+
+login = raw_input('Login: ')
+password = raw_input('Password: ')
+repeat_password = raw_input('Repeat password: ')
+mail = raw_input('Mail: ')
+name = raw_input('Name:')
+last_name = raw_input('Last name: ')
+mob_telefon = raw_input('Mobile telefon:')
+
+Anton = CreateUsersClass(login, password, mail, name, last_name, mob_telefon)
+
+while True:
+	try:
+		if Anton.more_or_less_forLogin() == False:
+			raise BadLength()
+
+		elif Anton.check_character() == False:
+			raise IllegalCharacters()
+
+		break
+
+	except ExceptionLogin as instance:
+		print instance
+		login = raw_input('Login: ')
+		Anton.login = login
+
+while True:
+	try:
+		if Anton.more_or_less_forPassword() == False:
+			raise BadLength()
+		elif Anton.check_password(repeat_password) == False:
+			raise FalseConfirmation()
+
+		break
+
+	except ExceptionPassword as instance:
+		print instance
+		password = raw_input('Password: ')
+		Anton.password = password
+		repeat_password = raw_input('Repeat password: ')
+
+with open('../basedata.txt', 'a') as file_users:
+	file_users.write('{0} {1} {2} {3} {4} {5}\n'.format(Anton.login, Anton.password, Anton.mail, Anton.name, Anton.last_name, Anton.mob_telefon))
+	print '\nYou registered.\n'
