@@ -1,0 +1,17 @@
+from ExceptionLogin import ExceptionLogin
+from ExceptionPassword import ExceptionPassword
+
+class BadLength(ExceptionLogin, ExceptionPassword):
+		
+	def __str__(self):
+		return '\nYou must enter more than 6 of character and less than 16 in login and password.\nTry again.\n'
+
+	def more_or_less_forLogin(self):
+		if len(self.login) < 7 or len(self.login) > 15:
+			return False
+		return True
+
+	def more_or_less_forPassword(self):
+		if len(self.password) < 7 or len(self.password) > 15:
+			return False
+		return True
